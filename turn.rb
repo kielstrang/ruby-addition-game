@@ -12,6 +12,13 @@ module MathGame
     def initialize(players)
       @players = players
     end
+    def do_turn
+      @players[0].lives -= 1
+      puts "#{@players[0].name}: #{@players[0].lives} vs #{@players[1].name}: #{@players[1].lives}"
+    end
+    def winner?
+      @players.any? {|player| player.lives <= 0}
+    end
     def next_players
       @players.reverse
     end

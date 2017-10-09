@@ -8,10 +8,12 @@ module MathGame
     end
 
     def play
-      p @players
-      turn = MathGame::Turn.new(@players)
-      @players = turn.next_players
-      p @players
+      while true
+        turn = MathGame::Turn.new(@players)
+        turn.do_turn
+        break if turn.winner?
+        @players = turn.next_players
+      end
     end
   end
 end
