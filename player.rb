@@ -1,10 +1,10 @@
-# Player:
-# has 3 lives and a name (Player 1/2)
-
-# get/set lives
-# get name
 module MathGame
   class Player
-
+    attr_reader :name
+    attr_accessor :lives
+    def initialize(name)
+      @name = name
+      @lives = 3
+    end
   end
 end
