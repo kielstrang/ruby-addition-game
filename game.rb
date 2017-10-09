@@ -1,10 +1,10 @@
-# Game:
-# creates 2 Players
-# creates a series of Turns (until Turn returns a winner)
+require './player'
+require './turn'
+
 module MathGame
   class Game
     def initialize
-
+      @players = [MathGame::Player.new('Player 1'), MathGame::Player.new('Player 2')]
     end
 
     def play
