@@ -8,6 +8,8 @@ module MathGame
     def do_turn
       question = MathGame::Question.new
       puts "#{@players[0].name}: What does #{question.a} plus #{question.b} equal?"
+      answer = gets.chomp.to_i
+      puts "#{answer} is cool, but you lose anyway!"
       @players[0].lives -= 1
       if @players[0].lives > 0
         puts "P1: #{@players.find{|p| p.id == 1}.lives} vs P2: #{@players.find{|p| p.id == 2}.lives}"
