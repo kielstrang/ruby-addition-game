@@ -14,7 +14,7 @@ module MathGame
     end
     def do_turn
       @players[0].lives -= 1
-      puts "#{@players[0].name}: #{@players[0].lives} vs #{@players[1].name}: #{@players[1].lives}"
+      puts "P1: #{@players.find{|p| p.id == 1}.lives} vs P2: #{@players.find{|p| p.id == 2}.lives}"
     end
     def winner?
       @players.any? {|player| player.lives <= 0}
