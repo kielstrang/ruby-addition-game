@@ -9,6 +9,11 @@
 # winner?
 module MathGame
   class Turn
-
+    def initialize(players)
+      @players = players
+    end
+    def next_players
+      @players.reverse
+    end
   end
 end

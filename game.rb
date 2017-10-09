@@ -8,7 +8,10 @@ module MathGame
     end
 
     def play
-      puts 'You just lost the game!'
+      p @players
+      turn = MathGame::Turn.new(@players)
+      @players = turn.next_players
+      p @players
     end
   end
 end
