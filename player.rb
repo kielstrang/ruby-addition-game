@@ -6,5 +6,8 @@ module MathGame
       @id = id
       @lives = 3
     end
+    def name
+      "Player #{@id}"
+    end
   end
 end

@@ -7,9 +7,13 @@ module MathGame
     end
     def do_turn
       question = MathGame::Question.new
-      puts "What does #{question.a} plus #{question.b} equal?"
+      puts "#{@players[0].name}: What does #{question.a} plus #{question.b} equal?"
       @players[0].lives -= 1
-      puts "P1: #{@players.find{|p| p.id == 1}.lives} vs P2: #{@players.find{|p| p.id == 2}.lives}"
+      if @players[0].lives > 0
+        puts "P1: #{@players.find{|p| p.id == 1}.lives} vs P2: #{@players.find{|p| p.id == 2}.lives}"
+      else
+        puts "#{@players[1].name} wins with a score of #{@players[1].lives}/3"
+      end
     end
     def winner?
       @players.any? {|player| player.lives <= 0}
